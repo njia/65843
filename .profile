@@ -23,7 +23,7 @@
 
 export PS1="[\u@\h] \w : "
 export TERM=xterm
-export ARCHFLAGS="--arch x86_64"
+export ARCHFLAGS="-arch x86_64"
 export PATH=/usr/local/mysql/bin:/usr/local/mysql/support-files:/opt/local/bin:/opt/local/sbin:$PATH
 
 alias vi=vim

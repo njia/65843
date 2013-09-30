@@ -14,6 +14,7 @@
 
  " Set 'nocompatible' to ward off unexpected things that your distro might
  " have made, as well as sanely reset options when re-sourcing .vimrc set nocompatible
+ " set nocompatible
 
  " Attempt to determine the type of a file based on its name and possibly its
  " contents. Use this to allow intelligent auto-indenting for each filetype,
@@ -58,12 +59,13 @@
 
  " Highlight searches (use <C-L> to temporarily turn off highlighting; see the
  " mapping of <C-L> below)
- set hlsearch
+ " set hlsearch
+ set incsearch
 
  " Modelines have historically been a source of security vulnerabilities. As
  " such, it may be a good idea to disable them and use the securemodelines
  " script, <http://www.vim.org/scripts/script.php?script_id=1876>.
- " set nomodeline
+ set nomodeline
 
 
  "------------------------------------------------------------
@@ -84,6 +86,7 @@
  " When opening a new line and no filetype-specific indenting is enabled, keep
  " the same indent as the line you're currently on. Useful for READMEs, etc. 
  set autoindent
+ set smartindent
 
  " Stop certain movements from always going to the first character of a line.
  " While this behaviour deviates from that of Vi, it does what most users
@@ -99,7 +102,7 @@
 
  " Instead of failing a command because of unsaved changes, instead raise a
  " dialogue asking if you wish to save changed files.
- set confirm
+ " set confirm
 
  " Use visual bell instead of beeping when doing something wrong
  set visualbell
@@ -110,7 +113,7 @@
  set t_vb=
 
  " Enable use of the mouse for all modes
- set mouse=a
+ " set mouse=a
 
  " Set the command window height to 2 lines, to avoid many cases of having to
  " "press <Enter> to continue"

@@ -23,13 +23,9 @@
 
 export PS1="[\u@\h] \w : "
 export TERM=xterm
-export ARCHFLAGS="-arch x86_64"
-export PATH=/usr/local/mysql/bin:/usr/local/mysql/support-files:/opt/local/bin:/opt/local/sbin:$PATH
 
 alias vi=vim
-alias ll='ls -l'
+alias ll='/bin/ls -l'
 
 
-# MacPorts Installer addition on 2013-07-31_at_10:50:52: adding an appropriate PATH variable for use with MacPorts.
-# Finished adapting your PATH environment variable for use with MacPorts.
-
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh

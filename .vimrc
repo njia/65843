@@ -1,4 +1,3 @@
-
  " URL: http://vim.wikia.com/wiki/Example_vimrc
  " Authors: http://vim.wikia.com/wiki/Vim_on_Freenode
  " Description: A minimal, but feature rich, example .vimrc. If you are a
@@ -14,7 +13,7 @@
 
  " Set 'nocompatible' to ward off unexpected things that your distro might
  " have made, as well as sanely reset options when re-sourcing .vimrc set nocompatible
- " set nocompatible
+ set nocompatible
 
  " Attempt to determine the type of a file based on its name and possibly its
  " contents. Use this to allow intelligent auto-indenting for each filetype,
@@ -161,3 +160,14 @@
 
 
  "------------------------------------------------------------
+ "
+ set rtp+=~/.vim/bundle/vundle
+ call vundle#rc()
+ Bundle 'gmarik/vundle'
+ Bundle 'tpope/vim-surround'
+ Bundle 'tpope/vim-fugitive'
+ Bundle 'tpope/vim-repeat'
+ Bundle 'tpope/vim-ragtag'
+ Bundle 'matchit.zip'
+ Bundle 'The-NERD-Tree'
+ Bundle 'bash-support.vim'

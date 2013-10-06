@@ -175,3 +175,4 @@
  Bundle 'The-NERD-Tree'
  Bundle 'bash-support.vim'
  Bundle 'dbext.vim'
+ Bundle 'Command-T'

@@ -168,11 +168,13 @@
  Bundle 'tpope/vim-fugitive'
  Bundle 'tpope/vim-repeat'
  Bundle 'tpope/vim-ragtag'
- Bundle 'tpope/vim-abolish'
  Bundle 'tpope/vim-rake'
  Bundle 'tpope/vim-rails'
  Bundle 'matchit.zip'
- Bundle 'The-NERD-Tree'
+ Bundle 'The-NERD-tree'
  Bundle 'bash-support.vim'
  Bundle 'dbext.vim'
  Bundle 'Command-T'
+
+ " Start NERD Tree when VIM starts
+ autocmd vimenter * NERDTree

@@ -166,15 +166,21 @@
  Bundle 'gmarik/vundle'
  Bundle 'tpope/vim-surround'
  Bundle 'tpope/vim-fugitive'
- Bundle 'tpope/vim-repeat'
  Bundle 'tpope/vim-ragtag'
  Bundle 'tpope/vim-rake'
  Bundle 'tpope/vim-rails'
+ Bundle 'tpope/vim-commentary'
  Bundle 'matchit.zip'
- Bundle 'The-NERD-tree'
+ Bundle 'scrooloose/nerdtree'
  Bundle 'bash-support.vim'
  Bundle 'dbext.vim'
- Bundle 'Command-T'
+ Bundle 'wincent/Command-T'
 
- " Start NERD Tree when VIM starts
- autocmd vimenter * NERDTree
+ " Auto load .vimrc file when it is written
+ augroup reload_vimrc " {
+   autocmd!
+   autocmd BufWritePost $MYVIMRC source $MYVIMRC
+ augroup END " }
+
+ " Start NERDTree if Vim started without any file name
+ autocmd vimenter * if !argc() | NERDTree | endif

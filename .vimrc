@@ -61,3 +61,9 @@
 
  " Start NERDTree if Vim started without any file name
  autocmd vimenter * if !argc() | NERDTree | endif
+
+ " Local MySQL 
+ let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=clear:dbname=exchange_development:host=localhost:port=13306'
+
+ " CGX Live export
+ let g:dbext_default_profile_live_export = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=app_cleargrain_com_au_prod:host=skp-cgxdb02:port=3306'

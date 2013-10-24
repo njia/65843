@@ -4,7 +4,6 @@
  set hidden
  set wildmenu
  set showcmd
- set showmatch
  set incsearch
  set nomodeline
  set ignorecase

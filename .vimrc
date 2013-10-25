@@ -1,23 +1,25 @@
  set nocompatible
  filetype indent plugin on
  syntax on
- set hidden
- set wildmenu
- set showcmd
- set incsearch
- set nomodeline
- set ignorecase
- set smartcase
- set backspace=indent,eol,start
  set autoindent
- set smartindent
- set nostartofline
- set ruler
- set laststatus=2
- set visualbell
- set t_vb=
+ set backspace=indent,eol,start
  set cmdheight=2
+ set hidden
+ set ignorecase
+ set incsearch
+ set laststatus=2
+ set nomodeline
+ set nostartofline
  set notimeout ttimeout ttimeoutlen=200
+ set ruler
+ set showcmd
+ set title
+ set showmode
+ set smartcase
+ set smartindent
+ set t_vb=
+ set visualbell
+ set wildmenu
  "
  " Use <F11> to toggle between 'paste' and 'nopaste'
  set pastetoggle=<F11>

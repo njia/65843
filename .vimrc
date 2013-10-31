@@ -39,20 +39,30 @@
  set rtp+=~/.vim/bundle/vundle
  call vundle#rc()
  Bundle 'gmarik/vundle'
- Bundle 'tpope/vim-surround'
- Bundle 'tpope/vim-fugitive'
- Bundle 'tpope/vim-ragtag'
- Bundle 'tpope/vim-rake'
- Bundle 'tpope/vim-rails'
- Bundle 'tpope/vim-repeat'
- Bundle 'tpope/vim-commentary'
+ "
+ Bundle 'SirVer/ultisnips'
+ Bundle 'bash-support.vim'
  Bundle 'matchit.zip'
  Bundle 'scrooloose/nerdtree'
- Bundle 'bash-support.vim'
- Bundle 'dbext.vim'
- Bundle 'wincent/Command-T'
- Bundle 'SirVer/ultisnips'
+ Bundle 'jistr/vim-nerdtree-tabs'
+ Bundle 'tpope/vim-commentary'
+ Bundle 'tpope/vim-fugitive'
+ Bundle 'tpope/vim-ragtag'
+ Bundle 'tpope/vim-rails'
+ Bundle 'tpope/vim-rake'
+ Bundle 'tpope/vim-repeat'
+ Bundle 'tpope/vim-surround'
  Bundle 'tristen/vim-sparkup'
+ Bundle 'vxf/dbext.vim'
+ Bundle 'wincent/Command-T'
+
+ " dbext MySQL connection profile
+ let g:dbext_default_always_prompt_for_variables = 1
+ let g:dbext_default_profile_MySQL_Local = 'type=MYSQL:user=clear:passwd=:dbname=exchange_development:host=localhost:port=13306'
+ let g:dbext_default_profile_LiveExport= 'type=MYSQL:user=clear:passwd=zq12wxce34rv:dbname=app_cleargrain_com_au_prod:host=skp-cgxdb02:port=3306'
+
+ " Set dbext default buffer line 
+ let g:dbext_default_buffer_lines = 25
 
  " Auto load .vimrc file when it is written
  augroup reload_vimrc " {
@@ -61,10 +71,8 @@
  augroup END " }
 
  " Start NERDTree if Vim started without any file name
- autocmd vimenter * if !argc() | NERDTree | endif
+ " autocmd vimenter * if !argc() | NERDTree | endif
 
- " Local MySQL 
- let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=clear:dbname=exchange_development:host=localhost:port=13306'
-
- " CGX Live export
- let g:dbext_default_profile_live_export = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=app_cleargrain_com_au_prod:host=skp-cgxdb02:port=3306'
+ " NERDTreeTabs configuration 
+ let g:nerdtree_tabs_smart_startup_focus = 2
+ let g:nerdtree_tabs_open_on_console_startup = 1

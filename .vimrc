@@ -33,6 +33,8 @@
  " Map <C-L> (redraw screen) to also turn off search highlighting until the
  " next search
  nnoremap <C-L> :nohl<CR><C-L>
+ nnoremap Q <nop>
+
 
  "------------------------------------------------------------
  "
@@ -44,6 +46,7 @@
  Bundle 'bash-support.vim'
  Bundle 'matchit.zip'
  Bundle 'scrooloose/nerdtree'
+ Bundle 'scrooloose/syntastic'
  Bundle 'jistr/vim-nerdtree-tabs'
  Bundle 'tpope/vim-commentary'
  Bundle 'tpope/vim-fugitive'
@@ -53,25 +56,23 @@
  Bundle 'tpope/vim-repeat'
  Bundle 'tpope/vim-surround'
  Bundle 'tristen/vim-sparkup'
- Bundle 'vxf/dbext.vim'
- Bundle 'wincent/Command-T'
+ Bundle 'dbext.vim'
+ Bundle 'Valloric/YouCompleteMe'
+ Bundle 'kien/ctrlp.vim'
+ Bundle 'jasoncodes/ctrlp-modified.vim'
 
  " dbext MySQL connection profile
- let g:dbext_default_always_prompt_for_variables = 1
- let g:dbext_default_profile_MySQL_Local = 'type=MYSQL:user=clear:passwd=:dbname=exchange_development:host=localhost:port=13306'
- let g:dbext_default_profile_LiveExport= 'type=MYSQL:user=clear:passwd=zq12wxce34rv:dbname=app_cleargrain_com_au_prod:host=skp-cgxdb02:port=3306'
+ let g:dbext_default_profile_Local = 'type=MYSQL:user=clear:passwd=:dbname=exchange_development:host=localhost:port=13306'
+ let g:dbext_default_profile_Prod_Live_Export = 'type=MYSQL:user=clear:passwd=zq12wxce34rv:dbname=app_cleargrain_com_au_prod:host=skp-cgxdb02:port=3306'
 
  " Set dbext default buffer line 
- let g:dbext_default_buffer_lines = 25
+ let g:dbext_default_buffer_lines = 20
 
  " Auto load .vimrc file when it is written
  augroup reload_vimrc " {
    autocmd!
    autocmd BufWritePost $MYVIMRC source $MYVIMRC
  augroup END " }
-
- " Start NERDTree if Vim started without any file name
- " autocmd vimenter * if !argc() | NERDTree | endif
 
  " NERDTreeTabs configuration 
  let g:nerdtree_tabs_smart_startup_focus = 2

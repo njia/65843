@@ -1,3 +1,8 @@
+ " solarized options 
+ let g:solarized_termcolors = 16
+ let g:solarized_termtrans = 1
+ set background=dark
+ colorscheme solarized
  set nocompatible
  filetype indent plugin on
  syntax on
@@ -60,10 +65,13 @@
  Bundle 'Valloric/YouCompleteMe'
  Bundle 'kien/ctrlp.vim'
  Bundle 'jasoncodes/ctrlp-modified.vim'
+ Bundle 'bling/vim-airline'
+ Bundle 'bling/vim-bufferline'
+ Bundle 'Solarized'
 
  " dbext MySQL connection profile
  let g:dbext_default_profile_Local = 'type=MYSQL:user=clear:passwd=:dbname=exchange_development:host=localhost:port=13306'
- let g:dbext_default_profile_Prod_Live_Export = 'type=MYSQL:user=clear:passwd=zq12wxce34rv:dbname=app_cleargrain_com_au_prod:host=skp-cgxdb02:port=3306'
+ let g:dbext_default_profile_Prod_Live_Export = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=app_cleargrain_com_au_prod:host=skp-cgxdb02:port=3306'
 
  " Set dbext default buffer line 
  let g:dbext_default_buffer_lines = 20
@@ -77,3 +85,11 @@
  " NERDTreeTabs configuration 
  let g:nerdtree_tabs_smart_startup_focus = 2
  let g:nerdtree_tabs_open_on_console_startup = 1
+
+
+ let g:airline#extensions#tabline#enabled = 1
+ let g:airline_theme = 'bubblegum'
+  if !exists('g:airline_powerline_fonts')
+    let g:airline_left_sep='›'  
+    let g:airline_right_sep='‹' 
+  endif

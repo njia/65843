@@ -1,6 +1,6 @@
  " solarized options 
  let g:solarized_termcolors = 16
- let g:solarized_termtrans = 1
+ "let g:solarized_termtrans = 1
  set background=dark
  colorscheme solarized
  set nocompatible
@@ -22,9 +22,13 @@
  set showmode
  set smartcase
  set smartindent
- set t_vb=
+ set vb t_vb=
  set visualbell
  set wildmenu
+ set t_Co=256
+ set encoding=utf-8
+ set cpoptions+=$
+ set number
  "
  " Use <F11> to toggle between 'paste' and 'nopaste'
  set pastetoggle=<F11>
@@ -39,6 +43,7 @@
  " next search
  nnoremap <C-L> :nohl<CR><C-L>
  nnoremap Q <nop>
+ map <F5> :NERDTreeFind<cr><C-w>p
 
 
  "------------------------------------------------------------
@@ -46,7 +51,6 @@
  set rtp+=~/.vim/bundle/vundle
  call vundle#rc()
  Bundle 'gmarik/vundle'
- "
  Bundle 'SirVer/ultisnips'
  Bundle 'bash-support.vim'
  Bundle 'matchit.zip'
@@ -60,16 +64,19 @@
  Bundle 'tpope/vim-rake'
  Bundle 'tpope/vim-repeat'
  Bundle 'tpope/vim-surround'
+ Bundle 'myusuf3/numbers.vim'
  Bundle 'tristen/vim-sparkup'
- Bundle 'dbext.vim'
+ Bundle 'vxf/dbext.vim'
  Bundle 'Valloric/YouCompleteMe'
  Bundle 'kien/ctrlp.vim'
  Bundle 'jasoncodes/ctrlp-modified.vim'
  Bundle 'bling/vim-airline'
  Bundle 'bling/vim-bufferline'
  Bundle 'Solarized'
+ Bundle 'nathanaelkane/vim-indent-guides'
 
  " dbext MySQL connection profile
+ let g:dbext_default_profile = 'Local'
  let g:dbext_default_profile_Local = 'type=MYSQL:user=clear:passwd=:dbname=exchange_development:host=localhost:port=13306'
  let g:dbext_default_profile_Prod_Live_Export = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=app_cleargrain_com_au_prod:host=skp-cgxdb02:port=3306'
 
@@ -89,7 +96,11 @@
 
  let g:airline#extensions#tabline#enabled = 1
  let g:airline_theme = 'bubblegum'
-  if !exists('g:airline_powerline_fonts')
-    let g:airline_left_sep='›'  
-    let g:airline_right_sep='‹' 
-  endif
+ if !exists('g:airline_powerline_fonts')
+   let g:airline_left_sep='›'  
+   let g:airline_right_sep='‹' 
+ endif
+
+ let g:ctrlp_switch_buffer = 'ET'
+ let g:indent_guides_start_level = 2
+ "

@@ -1,8 +1,6 @@
 #  Note that a variable may require special treatment
 #+ if it will be exported.
 
-
-
   BLACK='\e[0;30m'
   BLUE='\e0;34m'
   BROWN='\e[0;33m'
@@ -21,22 +19,24 @@
   YELLOW='\e[1;33m'
   NC='\e[m'
 
-
 # PS1="\n$GREEN[\w] \n$DARKGRAY($PCT\t$DARKGRAY)-($PCT\u$DARKGRAY)-($PCT\!
 # $DARKGRAY)$YELLOW-> $NC"
 
 #  Variables PCT and PS1 can be merged into a new PS1 variable:
   PS1="\`if [[ \$EUID -eq 0 ]]; then PCT='\[$LIGHTRED\]';
-  else PCT='\[$LIGHTCYAN\]'; fi; 
+  else PCT='\[$LIGHTCYAN\]'; fi;
   echo '\[$NC\]['\$PCT'\u\[$YELLOW\]@\[$GREEN\]\h:\w\[$NC\]]\[$GRAY\] : \[$NC\]'\`"
 #  The trick is to use strong quoting for parts of old PS1 variable.
 
 # export PS1="[\u@\h] \w : "
+export LSCOLORS=Gxfxcxdxbxegedabagacad
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 alias vi='/opt/boxen/homebrew/bin/vim'
-alias ll='/bin/ls -l'
 alias more='/usr/bin/less'
+alias now='/usr/bin/date +%Y%m%d%H%M%S'
+alias ls='/bin/ls -G'
+alias ll='/bin/ls -Gl'
 
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 set -o vi

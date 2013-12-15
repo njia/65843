@@ -1,8 +1,10 @@
+ set nocompatible
+
+ " Solarized options
  let g:solarized_termcolors = 16
  let g:solarized_termtrans = 1
  set background=dark
  colorscheme solarized
- set nocompatible
  filetype indent plugin on
  syntax on
  set autoindent
@@ -29,12 +31,24 @@
  set cpoptions+=$
  set number
  set list listchars=tab:\ \ ,trail:◆
+ set scrolloff=4
+ set switchbuf=useopen
+ set autoread
+ set history=100
+ set nolazyredraw
+ set cinkeys-=0#
+ set nrformats+=alpha
+
  highlight SpecialKey term=standout ctermbg=NONE ctermfg=DarkGreen
+ highlight Normal ctermbg=NONE
+ highlight nonText ctermbg=NONE
+ highlight LineNr ctermbg=NONE
+ highlight SignColum ctermbg=NONE
+ highlight CursorLine ctermbg=235
  "
  " Use <F11> to toggle between 'paste' and 'nopaste'
  set pastetoggle=<F11>
  set cul
- " set foldmethod=manual
 
  " Indentation settings for using 2 spaces instead of tabs.
  " Do not change 'tabstop' from its default value of 8 with this setup.
@@ -54,9 +68,6 @@
 
  map <F5> :NERDTreeFind<cr><C-w>p
 
-
- "------------------------------------------------------------
- "
  set rtp+=~/.vim/bundle/vundle
  call vundle#rc()
  Bundle 'SirVer/ultisnips'
@@ -84,7 +95,9 @@
  Bundle 'tpope/vim-surround'
  Bundle 'tristen/vim-sparkup'
  Bundle 'vxf/dbext.vim'
+ " Bundle 'Yggdroot/indentLine'
 
+ "------------------------------------------------------------
  " dbext MySQL connection profile
  let g:dbext_default_profile = 'Local'
  let g:dbext_default_profile_Local = 'type=MYSQL:user=clear:passwd=:dbname=exchange_development:host=localhost:port=13306'
@@ -105,7 +118,7 @@
  let g:nerdtree_tabs_smart_startup_focus = 2
  let g:nerdtree_tabs_open_on_console_startup = 1
 
-
+ "Airline configuration
  let g:airline#extensions#tabline#enabled = 1
  let g:airline_theme = 'bubblegum'
  if !exists('g:airline_powerline_fonts')
@@ -114,5 +127,11 @@
  endif
 
  let g:ctrlp_switch_buffer = 'ET'
- let g:indent_guides_start_level = 2
- "
+
+  let g:indent_guides_start_level = 2
+ " let g:indent_guides_indent_levels = 6
+  let g:indent_guides_guide_size = 1
+ " let g:indent_guides_enable_on_vim_startup = 1
+  let g:indent_guides_exclude_filetype = ['help', 'nerdtree']
+
+ " let g:indentLine_char = '≫'

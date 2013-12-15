@@ -29,7 +29,7 @@
  set cpoptions+=$
  set number
  set list listchars=tab:\ \ ,trail:◆
- highlight SpecialKey term=standout ctermfg=darkgreen
+ highlight SpecialKey term=standout ctermbg=NONE ctermfg=DarkGreen
  "
  " Use <F11> to toggle between 'paste' and 'nopaste'
  set pastetoggle=<F11>

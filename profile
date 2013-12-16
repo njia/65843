@@ -37,6 +37,9 @@ alias more='/usr/bin/less'
 alias now='/usr/bin/date +%Y%m%d%H%M%S'
 alias ls='/bin/ls -G'
 alias ll='/bin/ls -Gl'
+alias find='/opt/boxen/homebrew/bin/find'
+alias tar='/opt/boxen/homebrew/bin/gtar'
 
+source ~/perl5/perlbrew/etc/bashrc
 
 set -o vi

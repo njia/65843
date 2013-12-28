@@ -44,7 +44,7 @@
  highlight nonText ctermbg=NONE
  highlight LineNr ctermbg=NONE
  highlight SignColum ctermbg=NONE
- highlight CursorLine ctermbg=235
+ highlight CursorLine ctermbg=236
  "
  " Use <F11> to toggle between 'paste' and 'nopaste'
  set pastetoggle=<F11>
@@ -73,7 +73,6 @@
  Bundle 'SirVer/ultisnips'
  Bundle 'Solarized'
  Bundle 'Valloric/YouCompleteMe'
- Bundle 'bash-support.vim'
  Bundle 'bling/vim-airline'
  Bundle 'bling/vim-bufferline'
  Bundle 'gmarik/vundle'
@@ -104,6 +103,7 @@
  let g:dbext_default_profile_Prod_Live_Export = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=app_cleargrain_com_au_prod:host=skp-cgxdb02:port=3306'
  let g:dbext_default_profile_Depot_dev = 'type=MYSQL:user=root:passwd=:dbname=depot_development:host=localhost:port=13306'
  let g:dbext_default_profile_Depot_test = 'type=MYSQL:user=root:passwd=:dbname=depot_test:host=localhost:port=13306'
+ let g:dbext_default_history_max_entry = 64
 
  " Set dbext default buffer line
  let g:dbext_default_buffer_lines = 20

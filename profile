@@ -32,14 +32,15 @@
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
-alias vi='/opt/boxen/homebrew/bin/vim'
 alias more='/usr/bin/less'
-alias now='/usr/bin/date +%Y%m%d%H%M%S'
-alias ls='/bin/ls -G'
-alias ll='/bin/ls -Gl'
+alias now='/bin/date +%Y%m%d%H%M%S'
+alias ls='ls --color=always'
+alias ll='ls -l --color=always'
 alias find='/opt/boxen/homebrew/bin/find'
 alias tar='/opt/boxen/homebrew/bin/gtar'
 
 source ~/perl5/perlbrew/etc/bashrc
+PATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
 set -o vi

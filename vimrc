@@ -94,16 +94,20 @@
  Bundle 'tpope/vim-surround'
  Bundle 'tristen/vim-sparkup'
  Bundle 'vxf/dbext.vim'
- " Bundle 'Yggdroot/indentLine'
+ Bundle 'moll/vim-bbye'
+ Bundle 'ervandew/supertab'
+ "Bundle 'Yggdroot/indentLine'
 
  "------------------------------------------------------------
  " dbext MySQL connection profile
  let g:dbext_default_profile = 'Local'
  let g:dbext_default_profile_Local = 'type=MYSQL:user=clear:passwd=:dbname=exchange_development:host=localhost:port=13306'
  let g:dbext_default_profile_Prod_Live_Export = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=app_cleargrain_com_au_prod:host=skp-cgxdb02:port=3306'
+ let g:dbext_default_profile_rhuat = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=rhuat_cleargrain_com_au_prod:host=cst-cgxdb01:port=3306'
  let g:dbext_default_profile_Depot_dev = 'type=MYSQL:user=root:passwd=:dbname=depot_development:host=localhost:port=13306'
  let g:dbext_default_profile_Depot_test = 'type=MYSQL:user=root:passwd=:dbname=depot_test:host=localhost:port=13306'
- let g:dbext_default_history_max_entry = 64
+ let g:dbext_default_history_size = 4096
+ let g:dbext_default_history_max_entry = 0
 
  " Set dbext default buffer line
  let g:dbext_default_buffer_lines = 20
@@ -127,6 +131,8 @@
  endif
 
  let g:ctrlp_switch_buffer = 'ET'
+ let g:ctrlp_open_new_file = 't'
+ let g:ctrlp_open_multiple_files = 'tj'
 
   let g:indent_guides_start_level = 2
  " let g:indent_guides_indent_levels = 6
@@ -134,4 +140,15 @@
  " let g:indent_guides_enable_on_vim_startup = 1
   let g:indent_guides_exclude_filetype = ['help', 'nerdtree']
 
- " let g:indentLine_char = '≫'
+ "let g:indentLine_char = '≫'
+ "
+
+ if has("gui_running")
+   if has("gui_gtk2")
+     set guifont=Inconsolata\ 12
+   elseif has("gui_macvim")
+     set guifont=Menlo\ Regular:h14
+   elseif has("gui_win32")
+     set guifont=Consolas:h11:cANSI
+   endif
+ endif

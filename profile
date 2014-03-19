@@ -36,11 +36,15 @@ alias more='/usr/bin/less'
 alias now='/bin/date +%Y%m%d%H%M%S'
 alias ls='ls --color=always'
 alias ll='ls -l --color=always'
-alias find='/opt/boxen/homebrew/bin/find'
+alias find='/opt/boxen/homebrew/bin/gfind'
 alias tar='/opt/boxen/homebrew/bin/gtar'
 
 source ~/perl5/perlbrew/etc/bashrc
 PATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
+
+export HISTCONTROL=ignoredups:erasedups 
+shopt -s histappend 
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 set -o vi

@@ -96,6 +96,7 @@
  Bundle 'vxf/dbext.vim'
  Bundle 'moll/vim-bbye'
  Bundle 'ervandew/supertab'
+ Bundle 'oplatek/Conque-Shell'
  "Bundle 'Yggdroot/indentLine'
 
  "------------------------------------------------------------

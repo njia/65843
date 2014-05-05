@@ -22,7 +22,7 @@
  set title
  set showmode
  set smartcase
- set smartindent
+ " set smartindent
  set vb t_vb=
  set visualbell
  set wildmenu
@@ -153,3 +153,5 @@
      set guifont=Consolas:h11:cANSI
    endif
  endif
+
+ autocmd FileType python setlocal shiftwidth=2 tabstop=2

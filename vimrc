@@ -103,7 +103,8 @@
  " dbext MySQL connection profile
  let g:dbext_default_profile = 'Local'
  let g:dbext_default_profile_Local = 'type=MYSQL:user=clear:passwd=:dbname=exchange_development:host=localhost:port=13306'
- let g:dbext_default_profile_Prod_Live_Export = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=app_cleargrain_com_au_prod:host=skp-cgxdb02:port=3306'
+ let g:dbext_default_profile_Live_Export = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=app_cleargrain_com_au_prod:host=10.7.1.125:port=3306'
+ let g:dbext_default_profile_CI = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=ci_cleargrain_com_au_prod:host=cst-cgxdb01:port=3306'
  let g:dbext_default_profile_rhuat = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=rhuat_cleargrain_com_au_prod:host=cst-cgxdb01:port=3306'
  let g:dbext_default_profile_Depot_dev = 'type=MYSQL:user=root:passwd=:dbname=depot_development:host=localhost:port=13306'
  let g:dbext_default_profile_Depot_test = 'type=MYSQL:user=root:passwd=:dbname=depot_test:host=localhost:port=13306'

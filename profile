@@ -14,7 +14,7 @@
   LIGHTGREEN='\e[1;32m'
   LIGHTPURPLE='\e[1;35m'
   LIGHTRED='\e[1;31m'
-  PURPLE='\e[0;35'
+  PURPLE='\e[0;35m'
   RED='\e[0;31m'
   YELLOW='\e[1;33m'
   NC='\e[m'
@@ -25,7 +25,7 @@
 #  Variables PCT and PS1 can be merged into a new PS1 variable:
   PS1="\`if [[ \$EUID -eq 0 ]]; then PCT='\[$LIGHTRED\]';
   else PCT='\[$LIGHTCYAN\]'; fi;
-  echo '\[$NC\]['\$PCT'\u\[$YELLOW\]@\[$GREEN\]\h:\w\[$NC\]]\[$GRAY\] : \[$NC\]'\`"
+  echo '\[$LIGHTGREEN\]❮'\$PCT'\u\[$YELLOW\]@\[$LIGHTBLUE\]\h:\[$YELLOW\]\w\[$LIGHTGREEN\]❯\[$GRAY\]➤ \[$NC\]'\`"
 #  The trick is to use strong quoting for parts of old PS1 variable.
 
 # export PS1="[\u@\h] \w : "
@@ -43,8 +43,8 @@ source ~/perl5/perlbrew/etc/bashrc
 PATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
-export HISTCONTROL=ignoredups:erasedups 
-shopt -s histappend 
+export HISTCONTROL=ignoredups:erasedups
+shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 set -o vi

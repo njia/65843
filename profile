@@ -39,7 +39,6 @@ alias ll='ls -l --color=always'
 alias find='/opt/boxen/homebrew/bin/gfind'
 alias tar='/opt/boxen/homebrew/bin/gtar'
 
-source ~/perl5/perlbrew/etc/bashrc
 PATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 

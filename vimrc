@@ -1,12 +1,44 @@
  set nocompatible
+ filetype off
 
- " Solarized options
- let g:solarized_termcolors = 16
- let g:solarized_termtrans = 1
- set background=dark
- colorscheme solarized
+ set rtp+=~/.vim/bundle/vundle
+ call vundle#rc()
+
+ Plugin 'SirVer/ultisnips'
+ Plugin 'Solarized'
+ Plugin 'Valloric/YouCompleteMe'
+ Plugin 'bling/vim-airline'
+ Plugin 'bling/vim-bufferline'
+ Plugin 'gmarik/vundle'
+ Plugin 'godlygeek/tabular'
+ Plugin 'jasoncodes/ctrlp-modified.vim'
+ Plugin 'jistr/vim-nerdtree-tabs'
+ Plugin 'kien/ctrlp.vim'
+ Plugin 'matchit.zip'
+ Plugin 'myusuf3/numbers.vim'
+ Plugin 'nathanaelkane/vim-indent-guides'
+ Plugin 'scrooloose/nerdtree'
+ Plugin 'scrooloose/syntastic'
+ Plugin 'tpope/vim-commentary'
+ Plugin 'tpope/vim-fugitive'
+ Plugin 'tpope/vim-ragtag'
+ Plugin 'tpope/vim-rails'
+ Plugin 'tpope/vim-rake'
+ Plugin 'tpope/vim-repeat'
+ Plugin 'tpope/vim-surround'
+ Plugin 'tristen/vim-sparkup'
+ Plugin 'vxf/dbext.vim'
+ Plugin 'moll/vim-bbye'
+ Plugin 'ervandew/supertab'
+ Plugin 'oplatek/Conque-Shell'
+ Plugin 'vim-ruby/vim-ruby'
+ Plugin 'kchmck/vim-coffee-script'
+ Plugin 'rodjek/vim-puppet'
+ "Plugin 'Yggdroot/indentLine'
+
+ syntax enable
  filetype indent plugin on
- syntax on
+
  set autoindent
  set backspace=indent,eol,start
  set cmdheight=2
@@ -22,7 +54,7 @@
  set title
  set showmode
  set smartcase
- " set smartindent
+ set smartindent
  set vb t_vb=
  set visualbell
  set wildmenu
@@ -38,6 +70,12 @@
  set nolazyredraw
  set cinkeys-=0#
  set nrformats+=alpha
+
+ " Solarized options
+ let g:solarized_termcolors = 16
+ let g:solarized_termtrans = 1
+ set background=dark
+ colorscheme solarized
 
  highlight SpecialKey term=standout ctermbg=NONE ctermfg=DarkGreen
  highlight Normal ctermbg=NONE
@@ -68,42 +106,11 @@
 
  map <F5> :NERDTreeFind<cr><C-w>p
 
- set rtp+=~/.vim/bundle/vundle
- call vundle#rc()
- Bundle 'SirVer/ultisnips'
- Bundle 'Solarized'
- Bundle 'Valloric/YouCompleteMe'
- Bundle 'bling/vim-airline'
- Bundle 'bling/vim-bufferline'
- Bundle 'gmarik/vundle'
- Bundle 'godlygeek/tabular'
- Bundle 'jasoncodes/ctrlp-modified.vim'
- Bundle 'jistr/vim-nerdtree-tabs'
- Bundle 'kien/ctrlp.vim'
- Bundle 'matchit.zip'
- Bundle 'myusuf3/numbers.vim'
- Bundle 'nathanaelkane/vim-indent-guides'
- Bundle 'scrooloose/nerdtree'
- Bundle 'scrooloose/syntastic'
- Bundle 'tpope/vim-commentary'
- Bundle 'tpope/vim-fugitive'
- Bundle 'tpope/vim-ragtag'
- Bundle 'tpope/vim-rails'
- Bundle 'tpope/vim-rake'
- Bundle 'tpope/vim-repeat'
- Bundle 'tpope/vim-surround'
- Bundle 'tristen/vim-sparkup'
- Bundle 'vxf/dbext.vim'
- Bundle 'moll/vim-bbye'
- Bundle 'ervandew/supertab'
- Bundle 'oplatek/Conque-Shell'
- "Bundle 'Yggdroot/indentLine'
-
  "------------------------------------------------------------
  " dbext MySQL connection profile
  let g:dbext_default_profile = 'Local'
  let g:dbext_default_profile_Local = 'type=MYSQL:user=clear:passwd=:dbname=exchange_development:host=localhost:port=13306'
- let g:dbext_default_profile_Live_Export = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=app_cleargrain_com_au_prod:host=10.7.1.125:port=3306'
+ let g:dbext_default_profile_Live_Export = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=app_cleargrain_com_au_prod:host=10.7.1.17:port=3306'
  let g:dbext_default_profile_CI = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=ci_cleargrain_com_au_prod:host=cst-cgxdb01:port=3306'
  let g:dbext_default_profile_rhuat = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=rhuat_cleargrain_com_au_prod:host=cst-cgxdb01:port=3306'
  let g:dbext_default_profile_Depot_dev = 'type=MYSQL:user=root:passwd=:dbname=depot_development:host=localhost:port=13306'

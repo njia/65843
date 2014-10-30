@@ -34,11 +34,17 @@
  Plugin 'vim-ruby/vim-ruby'
  Plugin 'kchmck/vim-coffee-script'
  Plugin 'rodjek/vim-puppet'
+ Plugin 'vim-perl/vim-perl'
  "Plugin 'Yggdroot/indentLine'
 
  syntax enable
  filetype indent plugin on
 
+ " Indentation settings for using 2 spaces instead of tabs.
+ " Do not change 'tabstop' from its default value of 8 with this setup.
+ set shiftwidth=2
+ set softtabstop=2
+ set expandtab
  set autoindent
  set backspace=indent,eol,start
  set cmdheight=2
@@ -62,7 +68,6 @@
  set encoding=utf-8
  set cpoptions+=$
  set number
- set list listchars=tab:\ \ ,trail:◆
  set scrolloff=4
  set switchbuf=useopen
  set autoread
@@ -71,9 +76,13 @@
  set cinkeys-=0#
  set nrformats+=alpha
 
+ " Don't delete trail space for following two settings
+ set list listchars=tab:\ \ ,trail:✗
+ set fillchars-=vert:\| | set fillchars+=vert:\ 
+
  " Solarized options
  let g:solarized_termcolors = 16
- let g:solarized_termtrans = 1
+ let g:solarized_termtrans = 0
  set background=dark
  colorscheme solarized
 
@@ -87,12 +96,6 @@
  " Use <F11> to toggle between 'paste' and 'nopaste'
  set pastetoggle=<F11>
  set cul
-
- " Indentation settings for using 2 spaces instead of tabs.
- " Do not change 'tabstop' from its default value of 8 with this setup.
- set shiftwidth=2
- set softtabstop=2
- set expandtab
 
  " Map <C-L> (redraw screen) to also turn off search highlighting until the
  " next search

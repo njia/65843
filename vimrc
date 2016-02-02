@@ -7,16 +7,22 @@
  Plugin 'SirVer/ultisnips'
  Plugin 'Solarized'
  Plugin 'Valloric/YouCompleteMe'
- Plugin 'bling/vim-airline'
  Plugin 'bling/vim-bufferline'
+ Plugin 'chase/vim-ansible-yaml'
+ Plugin 'ervandew/supertab'
  Plugin 'gmarik/vundle'
  Plugin 'godlygeek/tabular'
  Plugin 'jasoncodes/ctrlp-modified.vim'
  Plugin 'jistr/vim-nerdtree-tabs'
+ Plugin 'kchmck/vim-coffee-script'
  Plugin 'kien/ctrlp.vim'
  Plugin 'matchit.zip'
+ Plugin 'moll/vim-bbye'
  Plugin 'myusuf3/numbers.vim'
  Plugin 'nathanaelkane/vim-indent-guides'
+ Plugin 'oplatek/Conque-Shell'
+ Plugin 'rking/ag.vim'
+ Plugin 'rodjek/vim-puppet'
  Plugin 'scrooloose/nerdtree'
  Plugin 'scrooloose/syntastic'
  Plugin 'tpope/vim-commentary'
@@ -27,14 +33,11 @@
  Plugin 'tpope/vim-repeat'
  Plugin 'tpope/vim-surround'
  Plugin 'tristen/vim-sparkup'
- Plugin 'vxf/dbext.vim'
- Plugin 'moll/vim-bbye'
- Plugin 'ervandew/supertab'
- Plugin 'oplatek/Conque-Shell'
- Plugin 'vim-ruby/vim-ruby'
- Plugin 'kchmck/vim-coffee-script'
- Plugin 'rodjek/vim-puppet'
+ Plugin 'vim-airline'
+ Plugin 'vim-airline/vim-airline-themes'
  Plugin 'vim-perl/vim-perl'
+ Plugin 'vim-ruby/vim-ruby'
+ Plugin 'vxf/dbext.vim'
  "Plugin 'Yggdroot/indentLine'
 
  syntax enable
@@ -42,46 +45,47 @@
 
  " Indentation settings for using 2 spaces instead of tabs.
  " Do not change 'tabstop' from its default value of 8 with this setup.
- set shiftwidth=2
- set softtabstop=2
- set expandtab
+
  set autoindent
+ set autoread
  set backspace=indent,eol,start
+ set cinkeys-=0#
  set cmdheight=2
+ set cpoptions+=$
+ set encoding=utf-8
+ set expandtab
  set hidden
+ set history=100
  set ignorecase
  set incsearch
  set laststatus=2
+ set nolazyredraw
  set nomodeline
  set nostartofline
  set notimeout ttimeout ttimeoutlen=200
+ set nrformats+=alpha
+ set number
  set ruler
+ set scrolloff=4
+ set shiftwidth=2
  set showcmd
- set title
  set showmode
  set smartcase
  set smartindent
+ set softtabstop=2
+ set switchbuf=useopen
+ set t_Co=256
+ set title
  set vb t_vb=
  set visualbell
  set wildmenu
- set t_Co=256
- set encoding=utf-8
- set cpoptions+=$
- set number
- set scrolloff=4
- set switchbuf=useopen
- set autoread
- set history=100
- set nolazyredraw
- set cinkeys-=0#
- set nrformats+=alpha
 
  " Don't delete trail space for following two settings
  set list listchars=tab:\ \ ,trail:✗
  set fillchars-=vert:\| | set fillchars+=vert:\ 
 
  " Solarized options
- let g:solarized_termcolors = 16
+ let g:solarized_termcolors = 256
  let g:solarized_termtrans = 0
  set background=dark
  colorscheme solarized
@@ -92,6 +96,7 @@
  highlight LineNr ctermbg=NONE
  highlight SignColum ctermbg=NONE
  highlight CursorLine ctermbg=236
+
  "
  " Use <F11> to toggle between 'paste' and 'nopaste'
  set pastetoggle=<F11>

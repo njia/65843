@@ -1,0 +1,21 @@
+[user]
+	email = jiananmail@gmail.com
+	name = Nan Jia
+[push]
+	default = simple
+[color]
+	ui = auto
+        autocrlf = true
+[color "branch"]
+	current = magenta
+	local   = green
+	remote  = cyan
+[color "status"]
+	branch    = magenta
+	untracked = red
+[alias]
+	lg = log --decorate
+        ll = log --decorate --oneline --all --graph
+        st = status
+        ss = status -s
+        co = checkout

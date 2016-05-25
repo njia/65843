@@ -5,7 +5,6 @@
 	default = simple
 [color]
 	ui = auto
-        autocrlf = true
 [color "branch"]
 	current = magenta
 	local   = green
@@ -19,3 +18,5 @@
         st = status
         ss = status -s
         co = checkout
+[core]
+	autocrlf = input

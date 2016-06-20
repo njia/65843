@@ -4,7 +4,6 @@
  set rtp+=~/.vim/bundle/vundle
  call vundle#rc()
 
- Plugin 'SirVer/ultisnips'
  Plugin 'Solarized'
  Plugin 'Valloric/YouCompleteMe'
  Plugin 'bling/vim-bufferline'
@@ -40,6 +39,12 @@
  Plugin 'vxf/dbext.vim'
  "Plugin 'Yggdroot/indentLine'
 
+ Plugin 'SirVer/ultisnips'
+
+ let g:UltiSnipsExpandTrigger="<tab>"
+ let g:UltiSnipsJumpForwardTrigger="<c-b>"
+ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
  syntax enable
  filetype indent plugin on
 
@@ -50,6 +55,7 @@
  set autoread
  set backspace=indent,eol,start
  set cinkeys-=0#
+ set cindent
  set cmdheight=2
  set cpoptions+=$
  set encoding=utf-8
@@ -71,7 +77,6 @@
  set showcmd
  set showmode
  set smartcase
- set smartindent
  set softtabstop=2
  set switchbuf=useopen
  set t_Co=256

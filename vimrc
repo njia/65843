@@ -1,8 +1,8 @@
  set nocompatible
  filetype off
 
- set rtp+=~/.vim/bundle/vundle
- call vundle#rc()
+ set rtp+=~/.vim/bundle/Vundle.vim
+ call vundle#begin()
 
  Plugin 'Solarized'
  Plugin 'Valloric/YouCompleteMe'
@@ -38,19 +38,19 @@
  Plugin 'vim-ruby/vim-ruby'
  Plugin 'vxf/dbext.vim'
  "Plugin 'Yggdroot/indentLine'
-
  Plugin 'SirVer/ultisnips'
+
+ call vundle#end()
+ filetype indent plugin on
 
  let g:UltiSnipsExpandTrigger="<tab>"
  let g:UltiSnipsJumpForwardTrigger="<c-b>"
  let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
- syntax enable
- filetype indent plugin on
-
  " Indentation settings for using 2 spaces instead of tabs.
  " Do not change 'tabstop' from its default value of 8 with this setup.
 
+ syntax enable
  set autoindent
  set autoread
  set backspace=indent,eol,start
@@ -122,13 +122,9 @@
  "------------------------------------------------------------
  " dbext MySQL connection profile
  let g:dbext_default_profile = 'Local'
- let g:dbext_default_profile_Local = 'type=MYSQL:user=clear:passwd=:dbname=exchange_development:host=localhost:port=13306'
- let g:dbext_default_profile_Live_Export = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=app_cleargrain_com_au_prod:host=10.7.1.17:port=3306'
- let g:dbext_default_profile_CI = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=ci_cleargrain_com_au_prod:host=cst-cgxdb01:port=3306'
- let g:dbext_default_profile_rhuat = 'type=MYSQL:user=clear:passwd=`cat /Users/njia/src/test/pw.txt`:dbname=rhuat_cleargrain_com_au_prod:host=cst-cgxdb01:port=3306'
- let g:dbext_default_profile_Depot_dev = 'type=MYSQL:user=root:passwd=:dbname=depot_development:host=localhost:port=13306'
- let g:dbext_default_profile_Depot_test = 'type=MYSQL:user=root:passwd=:dbname=depot_test:host=localhost:port=13306'
- let g:dbext_default_history_size = 4096
+ let g:dbext_default_profile_Local = 'type=MYSQL:user=clear:passwd=:dbname=:host=localhost:port=13306'
+ let g:dbext_default_profile_LE    = 'type=MYSQL:user=clear:passwd=:dbname=:host=:port=3306'
+ let g:dbext_default_history_size  = 4096
  let g:dbext_default_history_max_entry = 0
 
  " Set dbext default buffer line

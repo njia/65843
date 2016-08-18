@@ -4,12 +4,12 @@
  set rtp+=~/.vim/bundle/Vundle.vim
  call vundle#begin()
 
+ Plugin 'VundleVim/Vundle.vim'
  Plugin 'Solarized'
  Plugin 'Valloric/YouCompleteMe'
  Plugin 'bling/vim-bufferline'
  Plugin 'chase/vim-ansible-yaml'
  Plugin 'ervandew/supertab'
- Plugin 'gmarik/vundle'
  Plugin 'godlygeek/tabular'
  Plugin 'jasoncodes/ctrlp-modified.vim'
  Plugin 'jistr/vim-nerdtree-tabs'

@@ -1,22 +1,22 @@
 [user]
-	email = jiananmail@gmail.com
-	name = Nan Jia
+    email = jiananmail@gmail.com
+    name = Nan Jia
 [push]
-	default = simple
+    default = simple
 [color]
-	ui = auto
+    ui = auto
 [color "branch"]
-	current = magenta
-	local   = green
-	remote  = cyan
-[color "status"]
-	branch    = magenta
-	untracked = red
+    current = magenta
+    local   = green
+    remote  = cyan
+    [color "status"]
+    branch    = magenta
+    untracked = red
 [alias]
-	lg = log --decorate
-        ll = log --decorate --oneline --all --graph
-        st = status
-        ss = status -s
-        co = checkout
+    lg = log --decorate
+    ll = log --decorate --oneline --all --graph
+    st = status
+    ss = status -s
+    co = checkout
 [core]
-	autocrlf = input
+    autocrlf = input

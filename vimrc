@@ -114,6 +114,20 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
+"Alt keys to move around windows
+noremap <silent> <Esc><Esc>k :wincmd k<CR>
+noremap <silent> <Esc><Esc>j :wincmd j<CR>
+noremap <silent> <Esc><Esc>h :wincmd h<CR>
+noremap <silent> <Esc><Esc>l :wincmd l<CR>
+"Alt keys to resize window vertically
+noremap <silent> <Esc>- :wincmd -<CR>
+noremap <silent> <Esc>= :wincmd +<CR>
+noremap <silent> <Esc>< :wincmd <<CR>
+noremap <silent> <Esc>> :wincmd ><CR>
+"Alt keys to close window
+noremap <silent> <Esc>c :wincmd c<CR>
+
+"F5 to refresh NerdTree window
 map <F5> :NERDTreeFind<cr><C-w>p
 
 "------------------------------------------------------------
@@ -150,10 +164,12 @@ let g:ctrlp_open_new_file='t'
 let g:ctrlp_open_multiple_files='tj'
 
 "indentLine settings
+"let g:indentLine_first_char='»'
+"let g:indentLine_showFirstIndentLevel=1
+let g:indentLine_bufNameExclude  = ['NERD_tree.*']
+let g:indentLine_fileTypeExclude = ['text']
 let g:indentLine_conceallevel=2
-let g:indentLine_showFirstIndentLevel=1
-let g:indentLine_first_char='»'
-let g:indentLine_char='»'
+let g:indentLine_char='┆'
 
 if has("gui_running")
   if has("gui_gtk2")

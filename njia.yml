@@ -1,0 +1,25 @@
+---
+- hosts: localhost
+  connection: local
+
+  tasks:
+
+  - name: checkout dotfiles repository
+    git: repo=git@github.com:njia/65843.git dest=~/src/65843
+
+  - name: Setup config files
+    file: src=~/src/65843/{{item.SRC}} dest={{item.DEST}} state=link
+    with_items:
+      - {SRC: vimrc,       DEST: ~/.vimrc}
+      - {SRC: gitconfig,   DEST: ~/.gitconfig}
+      - {SRC: ansible.cfg, DEST: ~/.ansible.cfg}
+
+  - name: Insall software for Arch Linux
+    pacman: name={{item}} state=latest
+    when: ansible_distribution == "Archlinux"
+    become: true
+    with_items:
+      - vim
+      - git
+      - ruby
+      - pkgfile

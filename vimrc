@@ -15,6 +15,7 @@ Plugin 'chase/vim-ansible-yaml'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
+Plugin 'honza/vim-snippets'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'matchit.zip'
@@ -40,9 +41,15 @@ Plugin 'vxf/dbext.vim'
 call vundle#end()
 filetype indent plugin on
 
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger  = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion   = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " Indentation settings for using 2 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
@@ -124,8 +131,9 @@ noremap <silent> <Esc>- :wincmd -<CR>
 noremap <silent> <Esc>= :wincmd +<CR>
 noremap <silent> <Esc>< :wincmd <<CR>
 noremap <silent> <Esc>> :wincmd ><CR>
+
 "Alt keys to close window
-noremap <silent> <Esc>c :wincmd c<CR>
+noremap <silent> <Esc><Esc>c :Bdelete!<CR>
 
 "F5 to refresh NerdTree window
 map <F5> :NERDTreeFind<cr><C-w>p

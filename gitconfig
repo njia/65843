@@ -18,5 +18,6 @@
     st = status
     ss = status -s
     co = checkout
+    df = diff
 [core]
     autocrlf = input

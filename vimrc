@@ -1,60 +1,46 @@
-set nocompatible
-filetype off
+call plug#begin('~/.vim/plugged')
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'Solarized'
+Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+Plug 'Yggdroot/indentLine'
+Plug 'albfan/ag.vim'
+Plug 'bling/vim-bufferline'
+Plug 'chase/vim-ansible-yaml'
+Plug 'ctrlpvim/ctrlp.vim' | Plug 'jasoncodes/ctrlp-modified.vim'
+Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'kchmck/vim-coffee-script'
+Plug 'matchit.zip'
+Plug 'moll/vim-bbye'
+Plug 'myusuf3/numbers.vim'
+Plug 'rodjek/vim-puppet'
+Plug 'rstacruz/sparkup'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rake'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-perl/vim-perl'
+Plug 'vim-ruby/vim-ruby'
+Plug 'vxf/dbext.vim'
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'Solarized'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'Yggdroot/indentLine'
-Plugin 'albfan/ag.vim'
-Plugin 'bling/vim-bufferline'
-Plugin 'chase/vim-ansible-yaml'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'ervandew/supertab'
-Plugin 'godlygeek/tabular'
-Plugin 'honza/vim-snippets'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'matchit.zip'
-Plugin 'moll/vim-bbye'
-Plugin 'myusuf3/numbers.vim'
-Plugin 'rodjek/vim-puppet'
-Plugin 'rstacruz/sparkup'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-ragtag'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vim-perl/vim-perl'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'vxf/dbext.vim'
-
-call vundle#end()
-filetype indent plugin on
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger  = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion   = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+call plug#end()
 
 " Indentation settings for using 2 spaces instead of tabs.
 " Do not change 'tabstop' from its default value of 8 with this setup.
 
 syntax enable
+filetype on
+filetype plugin on
+filetype indent on
+
 set autoindent
 set autoread
 set backspace=indent,eol,start
@@ -121,22 +107,52 @@ noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
 
-"Alt keys to move around windows
-noremap <silent> <Esc><Esc>k :wincmd k<CR>
-noremap <silent> <Esc><Esc>j :wincmd j<CR>
-noremap <silent> <Esc><Esc>h :wincmd h<CR>
-noremap <silent> <Esc><Esc>l :wincmd l<CR>
-"Alt keys to resize window vertically
-noremap <silent> <Esc>- :wincmd -<CR>
-noremap <silent> <Esc>= :wincmd +<CR>
-noremap <silent> <Esc>< :wincmd <<CR>
-noremap <silent> <Esc>> :wincmd ><CR>
-
-"Alt keys to close window
+"Double Esc keys to close window
 noremap <silent> <Esc><Esc>c :Bdelete!<CR>
 
 "F5 to refresh NerdTree window
-map <F5> :NERDTreeFind<cr><C-w>p
+noremap <F5> :NERDTreeFind<cr><C-w>p
+
+"CtrlP modified key mapping
+noremap <Esc>m :CtrlPModified<CR>
+
+"Neovim key mappings
+if has ('nvim')
+  tnoremap <Esc> <C-\><C-n>
+  tnoremap <A-h> <C-\><C-n><C-w>h
+  tnoremap <A-j> <C-\><C-n><C-w>j
+  tnoremap <A-k> <C-\><C-n><C-w>k
+  tnoremap <A-l> <C-\><C-n><C-w>l
+  nnoremap <A-h> <C-w>h
+  nnoremap <A-j> <C-w>j
+  nnoremap <A-k> <C-w>k
+  nnoremap <A-l> <C-w>l
+  nnoremap <silent> <A--> :wincmd -<cr>
+  nnoremap <silent> <A-=> :wincmd +<cr>
+  nnoremap <silent> <A-,> :wincmd <<cr>
+  nnoremap <silent> <A-.> :wincmd ><cr>
+else
+  "double Esc keys to move around windows
+  noremap <silent> <Esc><Esc>k :wincmd k<cr>
+  noremap <silent> <Esc><Esc>j :wincmd j<cr>
+  noremap <silent> <Esc><Esc>h :wincmd h<cr>
+  noremap <silent> <Esc><Esc>l :wincmd l<cr>
+  "Alt keys to resize window
+  noremap <silent> <Esc>- :wincmd -<cr>
+  noremap <silent> <Esc>= :wincmd +<cr>
+  noremap <silent> <Esc>, :wincmd <<cr>
+  noremap <silent> <Esc>. :wincmd ><cr>
+endif
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger  = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion   = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
 
 "------------------------------------------------------------
 " dbext MySQL connection profile
@@ -159,8 +175,8 @@ let g:nerdtree_tabs_smart_startup_focus=2
 let g:nerdtree_tabs_open_on_console_startup=1
 
 "Airline configuration
-let g:airline#extensions#tabline#enabled=1
-let g:airline_theme='bubblegum'
+let g:airline#extensions#tabline#enabled=0
+let g:airline_theme='molokai'
 if !exists('g:airline_powerline_fonts')
   let g:airline_left_sep='›'
   let g:airline_right_sep='‹'
@@ -176,8 +192,8 @@ let g:ctrlp_open_multiple_files='tj'
 "let g:indentLine_showFirstIndentLevel=1
 let g:indentLine_bufNameExclude  = ['NERD_tree.*']
 let g:indentLine_fileTypeExclude = ['text']
-let g:indentLine_conceallevel=2
-let g:indentLine_char='┆'
+let g:indentLine_conceallevel = 2
+let g:indentLine_char = '┆'
 
 if has("gui_running")
   if has("gui_gtk2")

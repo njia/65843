@@ -19,9 +19,6 @@
   YELLOW='\e[1;33m'
   NC='\e[m'
 
-# PS1="\n$GREEN[\w] \n$DARKGRAY($PCT\t$DARKGRAY)-($PCT\u$DARKGRAY)-($PCT\!
-# $DARKGRAY)$YELLOW-> $NC"
-
 #  Variables PCT and PS1 can be merged into a new PS1 variable:
   PS1="\`if [[ \$EUID -eq 0 ]]; then PCT='\[$LIGHTRED\]';
   else PCT='\[$LIGHTCYAN\]'; fi;
@@ -30,24 +27,14 @@
 
 # export PS1="[\u@\h] \w : "
 export LSCOLORS=Gxfxcxdxbxegedabagacad
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 alias more='/usr/bin/less'
 alias now='/bin/date +%Y%m%d%H%M%S'
 alias ls='ls --color=always'
 alias ll='ls -l --color=always'
-alias find='/opt/boxen/homebrew/bin/gfind'
-alias tar='/opt/boxen/homebrew/bin/gtar'
-
-PATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
 export HISTCONTROL=ignoredups:erasedups
 shopt -s histappend
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 set -o vi
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-eval "$(plenv init -)"

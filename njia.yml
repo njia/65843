@@ -4,27 +4,30 @@
 
   tasks:
 
-  - name: checkout dotfiles repository
-    git: repo=git@github.com:njia/65843.git dest=~/src/65843
-
-  - name: Setup config files
+  - name: Setup Vim config files
     file: src=~/src/65843/{{item.SRC}} dest={{item.DEST}} state=link
     with_items:
-      - {SRC: vimrc,       DEST: ~/.vimrc}
       - {SRC: gitconfig,   DEST: ~/.gitconfig}
       - {SRC: ansible.cfg, DEST: ~/.ansible.cfg}
+      - {SRC: vimrc,       DEST: ~/.vimrc}
+      - {SRC: autoload,    DEST: ~/.vim/autoload}
+      - {SRC: vimrc,       DEST: ~/.config/nvim/init.vim}
+      - {SRC: autoload,    DEST: ~/.config/nvim/autoload}
+
+  - name: Link plugged directory to newvim
+    file: src=~/.vim/plugged dest=~/.config/nvim/plugged state=link
 
   - name: Insall software for Arch Linux
     pacman: name={{item}} state=latest
     when: ansible_distribution == "Archlinux"
     become: true
     with_items:
-      - vim
-      - git
-      - ruby
-      - pkgfile
-      - lshw
-      - tree
       - dstat
-      - the_silver_searcher
+      - git
+      - lshw
       - neovim
+      - pkgfile
+      - ruby
+      - the_silver_searcher
+      - tree
+      - vim

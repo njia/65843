@@ -17,9 +17,9 @@
   - name: Link plugged directory to newvim
     file: src=~/.vim/plugged dest=~/.config/nvim/plugged state=link
 
-  - name: Insall software for Arch Linux
+  - name: Insall software using pacman (Archi, Manjaro)
     pacman: name={{item}} state=latest
-    when: ansible_distribution == "Archlinux"
+    when: ansible_pkg_mgr == 'pacman'
     become: true
     with_items:
       - dstat
@@ -31,3 +31,5 @@
       - the_silver_searcher
       - tree
       - vim
+      - go
+      - go-tools

@@ -16,7 +16,7 @@
       dest: ~/.vim/plugged/Solarized/
       accept_hostkey: yes
 
-  - name: Install Vim plugins for first time
+  - name: Install/Update Vim plugins
     command: vim +PlugUpdate +qall!
 
   - name: Setup Vim config files

@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'Solarized'
+Plug 'altercation/vim-colors-solarized'
 Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 Plug 'Yggdroot/indentLine'
 Plug 'albfan/ag.vim'
@@ -12,7 +12,7 @@ Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'kchmck/vim-coffee-script'
-Plug 'matchit.zip'
+Plug 'vim-scripts/matchit.zip'
 Plug 'moll/vim-bbye'
 Plug 'myusuf3/numbers.vim'
 Plug 'rodjek/vim-puppet'
@@ -26,7 +26,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 Plug 'vim-ruby/vim-ruby'
 Plug 'vxf/dbext.vim'

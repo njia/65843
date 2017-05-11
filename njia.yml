@@ -39,12 +39,14 @@
     with_items:
       - dstat
       - git
+      - glances
       - go
       - go-tools
       - lshw
       - neovim
       - pkgfile
       - ruby
+      - stress
       - the_silver_searcher
       - tree
       - vim

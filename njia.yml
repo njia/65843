@@ -16,9 +16,6 @@
       dest: ~/.vim/plugged/Solarized/
       accept_hostkey: yes
 
-  - name: Install/Update Vim plugins
-    command: vim +PlugUpdate +qall!
-
   - name: Setup Vim config files
     file: src=~/src/65843/{{item.SRC}} dest={{item.DEST}} state=link
     with_items:
@@ -32,11 +29,12 @@
   - name: Link plugged directory to neovim
     file: src=~/.vim/plugged dest=~/.config/nvim/plugged state=link
 
-  - name: Insall software using pacman (Archi, Manjaro)
-    pacman: name={{item}} state=latest
+  - name: Insall software pacman (Archi, Manjaro)
     when: ansible_pkg_mgr == 'pacman'
+    pacman: name={{item}} state=latest
     become: true
     with_items:
+      - cmake
       - dstat
       - git
       - glances
@@ -50,3 +48,6 @@
       - the_silver_searcher
       - tree
       - vim
+
+  - name: Install/Update Vim plugins
+    command: "vim +PlugUpdate +qall!"

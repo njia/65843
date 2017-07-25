@@ -40,11 +40,15 @@
       - glances
       - go
       - go-tools
+      - iftop
+      - iotop
       - lshw
       - neovim
+      - nethogs
       - pkgfile
       - ruby
       - stress
+      - sysstat
       - the_silver_searcher
       - tree
       - vim

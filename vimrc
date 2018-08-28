@@ -27,7 +27,7 @@ Plug 'tpope/vim-rake'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
+"Plug 'vim-perl/vim-perl', { 'for': 'perl', 'do': 'make clean carp dancer highlight-all-pragmas moose test-more try-tiny' }
 Plug 'vim-ruby/vim-ruby'
 Plug 'vxf/dbext.vim'
 
@@ -40,6 +40,16 @@ syntax enable
 filetype on
 filetype plugin on
 filetype indent on
+
+" Solarized options
+"let g:solarized_termcolors=256
+let g:solarized_termtrans=0
+let g:solarized_contrast="normal"
+let g:solarized_italic=0
+set background=dark
+colorscheme solarized
+
+call togglebg#map("<F6>")
 
 set autoindent
 set autoread
@@ -79,13 +89,7 @@ set wildmenu
 set list listchars=tab:\ \ ,trail:✗
 set fillchars-=vert:\| | set fillchars+=vert:\ 
 
-" Solarized options
-let g:solarized_termcolors=256
-let g:solarized_termtrans=0
-set background=dark
-colorscheme solarized
-
-highlight CursorLine ctermbg=236
+highlight CursorLine ctermbg=238
 highlight LineNr     ctermbg=NONE
 highlight Normal     ctermbg=NONE
 highlight SignColum  ctermbg=NONE
